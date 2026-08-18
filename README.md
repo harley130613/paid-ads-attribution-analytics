@@ -23,7 +23,6 @@ Dự án phân tích hiệu quả phân bổ ngân sách quảng cáo đa kênh 
 - [Công nghệ sử dụng](#công-nghệ-và-phương-pháp-sử-dụng)
 - [Cấu trúc thư mục](#cấu-trúc-thư-mục)
 - [Cách chạy dự án](#cách-chạy-dự-án)
-- [Tác giả](#tác-giả)
 
 ## Tổng quan dự án
 
