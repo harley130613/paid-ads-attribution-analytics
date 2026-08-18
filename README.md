@@ -1,6 +1,6 @@
 # Paid Ads & Customer Journey Attribution Analytics
 
-Phân tích hiệu quả phân bổ ngân sách paid ads đa kênh và mô hình hóa customer journey —
+Phân tích hiệu quả phân bổ ngân sách paid ads đa kênh và mô hình hóa customer journey, 
 trả lời câu hỏi **"khách hàng thực sự đến từ đâu, và ngân sách ads có đang được chi đúng chỗ?"**
 
 Repo gồm **2 phần**:
@@ -10,11 +10,11 @@ Repo gồm **2 phần**:
   luyện tập kỹ năng multi-touch attribution ở cấp touchpoint.
 - **Phần 2 — Paid channel performance (dữ liệu thật, đã ẩn danh hóa):** phân tích dữ liệu
   **thật** từ MMP Airbridge của BUTL (01/06 – 17/08/2026), đo ROAS/CAC theo kênh và chất lượng
-  traffic — các chỉ số tài chính tuyệt đối đã được **ẩn danh hóa thành % / index** trước khi
+  traffic - các chỉ số tài chính tuyệt đối đã được **ẩn danh hóa thành % / index** trước khi
   đưa vào repo công khai để bảo mật số liệu kinh doanh của doanh nghiệp.
 
 > **Về nguồn dữ liệu:** Phần 1 dùng dữ liệu mô phỏng (simulated), không phải số liệu doanh
-> nghiệp thật — được nêu rõ trong mục tương ứng bên dưới. Phần 2 dùng dữ liệu xuất thật từ hệ
+> nghiệp thật, được nêu rõ trong mục tương ứng bên dưới. Phần 2 dùng dữ liệu xuất thật từ hệ
 > thống MMP (Airbridge) nơi tác giả đang làm việc; các file CSV gốc **không** được đưa vào repo
 > (chỉ số liệu tổng hợp đã ẩn danh hóa mới được công khai — xem mục "Bảo mật dữ liệu" bên dưới).
 
@@ -22,8 +22,8 @@ Repo gồm **2 phần**:
 
 ### Bài toán
 
-Các nền tảng quảng cáo (Facebook, Google, TikTok, Zalo) đều báo cáo hiệu quả theo **last-click**
-— chỉ tính công cho điểm chạm cuối cùng trước khi khách đặt chuyến. Cách nhìn này thường đánh
+Các nền tảng quảng cáo (Facebook, Google, TikTok, Zalo) đều báo cáo hiệu quả theo **last-click**,
+chỉ tính công cho điểm chạm cuối cùng trước khi khách đặt chuyến. Cách nhìn này thường đánh
 giá thấp các kênh đóng vai trò "mở phễu" (tạo nhận biết ban đầu) và đánh giá cao các kênh
 "chốt đơn". Dự án mô phỏng dữ liệu ở cấp **touchpoint** (không chỉ cấp campaign) để so sánh
 3 mô hình attribution và xem ngân sách nên được phân bổ lại như thế nào nếu nhìn toàn bộ hành trình
