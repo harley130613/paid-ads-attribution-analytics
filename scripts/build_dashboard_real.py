@@ -1,0 +1,351 @@
+import json
+
+with open("/home/claude/marketing_attribution_project/output/real_summary_public.json", encoding="utf-8") as f:
+    DATA = json.load(f)
+
+data_json = json.dumps(DATA, ensure_ascii=False)
+
+HTML = """<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MMP Airbridge — Paid Channel & Product Funnel (Real Data, Anonymized)</title>
+<style>
+  :root {
+    --surface-1:  #fcfcfb;
+    --page:       #f9f9f7;
+    --text-1:     #0b0b0b;
+    --text-2:     #52514e;
+    --muted:      #898781;
+    --grid:       #e1e0d9;
+    --border:     rgba(11,11,11,0.10);
+    --good:       #0ca30c;
+    --critical:   #d03b3b;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--page); color: var(--text-1);
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    padding: 28px 32px 60px;
+  }
+  h1 { font-size: 21px; margin: 0 0 4px; }
+  .subtitle { color: var(--text-2); font-size: 13px; margin: 0 0 10px; line-height: 1.5; }
+  .subtitle b { color: var(--text-1); }
+  .banner {
+    background: #fff8e6; border: 1px solid #ecd394; border-radius: 8px;
+    padding: 10px 14px; font-size: 12.5px; color: #6b5416; margin-bottom: 22px; line-height: 1.5;
+  }
+  .kpi-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 24px; }
+  .kpi-card {
+    background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px;
+    padding: 16px 18px;
+  }
+  .kpi-label { font-size: 12px; color: var(--muted); margin-bottom: 6px; }
+  .kpi-value { font-size: 24px; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .kpi-sub { font-size: 12px; color: var(--text-2); margin-top: 4px; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+  .panel {
+    background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px;
+    padding: 18px 20px;
+  }
+  .panel h2 { font-size: 14px; margin: 0 0 2px; }
+  .panel .desc { font-size: 12px; color: var(--text-2); margin: 0 0 14px; }
+  .chart-wrap svg { display: block; width: 100%; height: auto; overflow: visible; }
+  .bar-label { font-size: 11px; fill: var(--text-2); font-variant-numeric: tabular-nums; }
+  .axis-label { font-size: 10.5px; fill: var(--muted); }
+  .cat-label { font-size: 11.5px; fill: var(--text-1); }
+  table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+  th, td { text-align: right; padding: 7px 8px; border-bottom: 1px solid var(--grid); }
+  th:first-child, td:first-child { text-align: left; }
+  th { color: var(--muted); font-weight: 600; font-size: 11.5px; text-transform: uppercase; letter-spacing: .02em; }
+  .insight {
+    background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px;
+    padding: 16px 20px; margin-bottom: 16px; font-size: 13px; line-height: 1.65; color: var(--text-2);
+  }
+  .insight b { color: var(--text-1); }
+  .tag { display: inline-block; font-size: 10.5px; font-weight: 700; padding: 1px 7px; border-radius: 20px; margin-left: 6px; }
+  .tag.good { background: #e5f6e5; color: #0a6b0a; }
+  .tag.bad { background: #fbe7e6; color: #a12b2b; }
+  footer { color: var(--muted); font-size: 11.5px; margin-top: 20px; }
+</style>
+</head>
+<body>
+  <h1>MMP Airbridge — Paid Channel Performance & Product Funnel</h1>
+  <p class="subtitle"><b>Dữ liệu THẬT</b> từ hệ thống MMP (Airbridge) của BUTL, 01/06 &ndash; 17/08/2026 (78 ngày).</p>
+  <div class="banner">
+    Các chỉ số tài chính (doanh thu, chi phí, CAC) đã được <b>ẩn danh hóa</b> thành % thị phần / chỉ số (index)
+    để bảo mật số liệu kinh doanh thật của doanh nghiệp — không hiển thị số VND tuyệt đối. ROAS được giữ nguyên
+    vì là tỷ lệ (revenue/cost), không làm lộ quy mô doanh thu thật.
+  </div>
+
+  <div class="kpi-row" id="kpiRow"></div>
+
+  <div class="grid-2">
+    <div class="panel">
+      <h2>Thị phần install theo kênh</h2>
+      <p class="desc">% tổng install trong kỳ, theo kênh attribution (MMP)</p>
+      <div class="chart-wrap" id="installShareChart"></div>
+    </div>
+    <div class="panel">
+      <h2>Install theo hệ điều hành</h2>
+      <p class="desc">Phân bổ install theo OS</p>
+      <div class="chart-wrap" id="osChart"></div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="panel">
+      <h2>ROAS theo kênh trả phí</h2>
+      <p class="desc">Revenue / Cost — tỷ lệ thuần, không lộ số tuyệt đối</p>
+      <div class="chart-wrap" id="roasChart"></div>
+    </div>
+    <div class="panel">
+      <h2>CAC index theo kênh (trung bình paid = 100)</h2>
+      <p class="desc">Chỉ số chi phí trên mỗi khách hàng — thấp hơn 100 nghĩa là rẻ hơn trung bình</p>
+      <div class="chart-wrap" id="cacChart"></div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="panel">
+      <h2>Hoạt động sản phẩm trong kỳ</h2>
+      <p class="desc">Khối lượng sự kiện toàn app (không phải phễu 1 cohort — Sign-up chỉ tính user mới, Order Complete tính cả user cũ)</p>
+      <div class="chart-wrap" id="activityChart"></div>
+    </div>
+    <div class="panel">
+      <h2>Chất lượng traffic: tỷ lệ re-install theo kênh</h2>
+      <p class="desc">Re-install / Install — tỷ lệ cao bất thường có thể là dấu hiệu traffic kém chất lượng</p>
+      <div class="chart-wrap" id="fraudChart"></div>
+    </div>
+  </div>
+
+  <div class="insight" id="insightBox"></div>
+
+  <div class="panel">
+    <h2>Chi tiết theo kênh trả phí</h2>
+    <p class="desc">ROAS, CAC index và thị phần chi phí/doanh thu (ẩn danh)</p>
+    <table id="channelTable"></table>
+  </div>
+
+  <footer>BI Dashboard tương tác (HTML + SVG thuần) &middot; Xây dựng từ dữ liệu thật MMP Airbridge, chỉ số tài chính đã ẩn danh hóa &middot; Trần Thị Cẩm Loan — Marketing Data Analyst</footer>
+
+<script>
+const DATA = __DATA_JSON__;
+const PALETTE = { blue: '#2a78d6', orange: '#eb6834', aqua: '#1baf7a', yellow: '#eda100', violet: '#4a3aa7', magenta: '#e87ba4' };
+const CHANNEL_COLOR = {
+  'unattributed': '#c3c2b7',
+  'google.adwords': PALETTE.blue,
+  'apple.searchads': PALETTE.orange,
+  'tiktok': PALETTE.aqua,
+  'facebook.business': PALETTE.yellow,
+  'referral': PALETTE.violet,
+  'fanpage.facebook': PALETTE.magenta,
+};
+const CHANNEL_LABEL = {
+  'unattributed': 'Unattributed (Organic)',
+  'google.adwords': 'Google Ads',
+  'apple.searchads': 'Apple Search Ads',
+  'tiktok': 'TikTok Ads',
+  'facebook.business': 'Facebook Ads',
+  'referral': 'Referral',
+  'fanpage.facebook': 'Fanpage FB',
+  'tiktok.video': 'TikTok Video',
+  'qr': 'QR',
+};
+const label = c => CHANNEL_LABEL[c] || c;
+const color = (c, i) => CHANNEL_COLOR[c] || ['#2a78d6','#eb6834','#1baf7a','#eda100','#4a3aa7'][i % 5];
+const fmtN = n => new Intl.NumberFormat('vi-VN').format(Math.round(n));
+const fmtPct = n => n.toFixed(1) + '%';
+
+const NS = 'http://www.w3.org/2000/svg';
+function el(tag, attrs) {
+  const e = document.createElementNS(NS, tag);
+  for (const k in attrs) e.setAttribute(k, attrs[k]);
+  return e;
+}
+
+function hBarChart(containerId, { labels, values, colors, valueFmt }) {
+  const container = document.getElementById(containerId);
+  const W = container.clientWidth || 460, rowH = 34, gap = 10;
+  const H = labels.length * (rowH + gap) + 10;
+  const leftPad = 118, rightPad = 66;
+  const maxV = Math.max(...values.map(v => Math.abs(v))) * 1.15 || 1;
+  const svg = el('svg', { viewBox: `0 0 ${W} ${H}`, width: W, height: H });
+
+  for (let i = 0; i <= 4; i++) {
+    const x = leftPad + (i / 4) * (W - leftPad - rightPad);
+    svg.appendChild(el('line', { x1: x, x2: x, y1: 4, y2: H - 4, stroke: '#e1e0d9', 'stroke-width': 1 }));
+  }
+
+  labels.forEach((lab, i) => {
+    const y = i * (rowH + gap) + 6;
+    const barW = (Math.abs(values[i]) / maxV) * (W - leftPad - rightPad);
+
+    const catText = el('text', { x: leftPad - 10, y: y + rowH / 2 + 4, 'text-anchor': 'end', class: 'cat-label' });
+    catText.textContent = lab;
+    svg.appendChild(catText);
+
+    svg.appendChild(el('rect', { x: leftPad, y, width: Math.max(barW, 2), height: rowH, rx: 4, fill: colors[i] }));
+
+    const valText = el('text', { x: leftPad + barW + 8, y: y + rowH / 2 + 4, class: 'bar-label' });
+    valText.textContent = valueFmt(values[i]);
+    svg.appendChild(valText);
+  });
+
+  container.innerHTML = '';
+  container.appendChild(svg);
+}
+
+function vBarChart(containerId, { labels, values, colors, valueFmt }) {
+  const container = document.getElementById(containerId);
+  const W = container.clientWidth || 460, H = 250;
+  const topPad = 20, bottomPad = 46;
+  const n = labels.length;
+  const barGap = 18;
+  const barW = (W - barGap * (n + 1)) / n;
+  const maxV = Math.max(...values) * 1.2;
+  const svg = el('svg', { viewBox: `0 0 ${W} ${H}`, width: W, height: H });
+
+  for (let i = 0; i <= 3; i++) {
+    const y = topPad + (i / 3) * (H - topPad - bottomPad);
+    svg.appendChild(el('line', { x1: 0, x2: W, y1: y, y2: y, stroke: '#e1e0d9', 'stroke-width': 1 }));
+  }
+
+  labels.forEach((lab, i) => {
+    const x = barGap + i * (barW + barGap);
+    const h = (values[i] / maxV) * (H - topPad - bottomPad);
+    const y = H - bottomPad - h;
+    svg.appendChild(el('rect', { x, y, width: barW, height: h, rx: 4, fill: colors[i] }));
+    const valText = el('text', { x: x + barW / 2, y: y - 6, 'text-anchor': 'middle', class: 'bar-label' });
+    valText.textContent = valueFmt(values[i]);
+    svg.appendChild(valText);
+    // wrap label into 2 lines if long
+    const words = lab.split(' ');
+    const mid = Math.ceil(words.length / 2);
+    const line1 = words.slice(0, mid).join(' '), line2 = words.slice(mid).join(' ');
+    const l1 = el('text', { x: x + barW / 2, y: H - 26, 'text-anchor': 'middle', class: 'axis-label' });
+    l1.textContent = line1;
+    svg.appendChild(l1);
+    if (line2) {
+      const l2 = el('text', { x: x + barW / 2, y: H - 14, 'text-anchor': 'middle', class: 'axis-label' });
+      l2.textContent = line2;
+      svg.appendChild(l2);
+    }
+  });
+
+  container.innerHTML = '';
+  container.appendChild(svg);
+}
+
+// ---------- KPI cards ----------
+const paidOnly = DATA.by_channel_economics_anonymized;
+const totalOrders = paidOnly.reduce((s, c) => s + c.orders, 0);
+document.getElementById('kpiRow').innerHTML = [
+  { label: 'Blended ROAS (toàn kênh)', value: DATA.blended_roas_all_channels.toFixed(1) + 'x', sub: 'Bao gồm unattributed (cost=0)' },
+  { label: 'Paid-only ROAS', value: DATA.paid_only_roas.toFixed(2) + 'x', sub: '4 kênh trả phí có chi phí' },
+  { label: 'Thị phần install từ paid ads', value: fmtPct(DATA.paid_installs_share_pct), sub: '66,7% còn lại là Unattributed/Organic' },
+  { label: 'Tỷ lệ áp dụng voucher', value: fmtPct(DATA.voucher.apply_rate_pct), sub: `${fmtN(DATA.voucher.voucher_applied)} / ${fmtN(DATA.voucher.voucher_viewed)} lượt xem` },
+].map(k => `
+  <div class="kpi-card">
+    <div class="kpi-label">${k.label}</div>
+    <div class="kpi-value">${k.value}</div>
+    <div class="kpi-sub">${k.sub}</div>
+  </div>`).join('');
+
+// ---------- Install share by channel ----------
+const installSorted = [...DATA.by_channel_install].sort((a, b) => b.install_share_pct - a.install_share_pct).slice(0, 7);
+hBarChart('installShareChart', {
+  labels: installSorted.map(c => label(c.Channel)),
+  values: installSorted.map(c => c.install_share_pct),
+  colors: installSorted.map((c, i) => color(c.Channel, i)),
+  valueFmt: v => fmtPct(v),
+});
+
+// ---------- OS split ----------
+const osSorted = DATA.by_os.filter(o => o.installs > 0);
+hBarChart('osChart', {
+  labels: osSorted.map(o => o['OS Name']),
+  values: osSorted.map(o => o.share_pct),
+  colors: ['#2a78d6', '#eb6834', '#1baf7a'],
+  valueFmt: v => fmtPct(v),
+});
+
+// ---------- ROAS by paid channel ----------
+const roasSorted = [...paidOnly].sort((a, b) => b.roas - a.roas);
+hBarChart('roasChart', {
+  labels: roasSorted.map(c => label(c.Channel)),
+  values: roasSorted.map(c => c.roas),
+  colors: roasSorted.map(c => c.roas >= 1 ? '#0ca30c' : '#d03b3b'),
+  valueFmt: v => v.toFixed(2) + 'x',
+});
+
+// ---------- CAC index ----------
+const cacSorted = [...paidOnly].sort((a, b) => a.cac_index - b.cac_index);
+hBarChart('cacChart', {
+  labels: cacSorted.map(c => label(c.Channel)),
+  values: cacSorted.map(c => c.cac_index),
+  colors: cacSorted.map(c => c.cac_index <= 100 ? '#0ca30c' : '#d03b3b'),
+  valueFmt: v => v.toFixed(0),
+});
+
+// ---------- Product activity ----------
+const funnel = DATA.funnel;
+vBarChart('activityChart', {
+  labels: funnel.map(f => f.step),
+  values: funnel.map(f => f.events),
+  colors: ['#cde2fb', '#9ec5f4', '#6da7ec', '#3987e5', '#2a78d6', '#184f95'],
+  valueFmt: v => fmtN(v),
+});
+
+// ---------- Fraud / re-install ----------
+const fraudSorted = [...DATA.fraud].filter(f => f.Channel !== 'unattributed' && f['Installs (App)'] >= 10)
+  .sort((a, b) => b.reinstall_rate_pct - a.reinstall_rate_pct);
+hBarChart('fraudChart', {
+  labels: fraudSorted.map(f => label(f.Channel)),
+  values: fraudSorted.map(f => f.reinstall_rate_pct),
+  colors: fraudSorted.map(f => f.reinstall_rate_pct > 1.5 ? '#d03b3b' : '#898781'),
+  valueFmt: v => v.toFixed(2) + '%',
+});
+
+// ---------- Insight box ----------
+const best = roasSorted[0], worst = roasSorted[roasSorted.length - 1];
+document.getElementById('insightBox').innerHTML = `
+  <b>Insight chính:</b> Trong 4 kênh trả phí, <b>${label(best.Channel)}</b> hiệu quả nhất với ROAS
+  <b>${best.roas.toFixed(2)}x</b> <span class="tag good">TỐT</span> và CAC thấp nhất, trong khi
+  <b>${label(worst.Channel)}</b> có ROAS chỉ <b>${worst.roas.toFixed(2)}x</b>
+  ${worst.roas < 1 ? '<span class="tag bad">DƯỚI 1 — LỖ TRÊN CHI PHÍ ADS</span>' : '<span class="tag bad">THẤP NHẤT</span>'} —
+  gợi ý nên xem xét cắt giảm/tối ưu lại ngân sách cho kênh này thay vì duy trì như hiện tại.<br><br>
+  Về tổng thể, kênh trả phí chỉ đóng góp <b>${fmtPct(DATA.paid_installs_share_pct)}</b> tổng install — phần lớn tăng trưởng
+  (~${fmtPct(100 - DATA.paid_installs_share_pct)}) đến từ <b>Unattributed/Organic</b>, nghĩa là hiệu ứng thương hiệu/truyền miệng
+  đang đóng vai trò lớn hơn paid ads trong việc thu hút người dùng mới — ngân sách ads nên được nhìn như một đòn bẩy tăng tốc
+  bên cạnh brand, không phải nguồn tăng trưởng chính.
+`;
+
+// ---------- Channel table ----------
+const tbl = document.getElementById('channelTable');
+tbl.innerHTML = `
+  <thead><tr><th>Kênh</th><th>Orders</th><th>ROAS</th><th>CAC Index</th><th>% Chi phí</th><th>% Doanh thu</th></tr></thead>
+  <tbody>
+    ${roasSorted.map(c => `
+      <tr>
+        <td>${label(c.Channel)}</td>
+        <td>${fmtN(c.orders)}</td>
+        <td>${c.roas.toFixed(2)}x</td>
+        <td>${c.cac_index.toFixed(0)}</td>
+        <td>${fmtPct(c.cost_share_pct)}</td>
+        <td>${fmtPct(c.revenue_share_pct)}</td>
+      </tr>`).join('')}
+  </tbody>
+`;
+</script>
+</body>
+</html>
+"""
+
+HTML = HTML.replace("__DATA_JSON__", data_json)
+
+out_path = "/home/claude/marketing_attribution_project/output/dashboard_real.html"
+with open(out_path, "w", encoding="utf-8") as f:
+    f.write(HTML)
+print("written", out_path, len(HTML), "bytes")

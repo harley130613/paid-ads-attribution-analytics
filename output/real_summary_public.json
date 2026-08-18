@@ -1,0 +1,267 @@
+{
+  "period": "2026-06-01 to 2026-08-17 (78 ngày)",
+  "note": "Dữ liệu THẬT từ MMP Airbridge (BUTL) — chỉ số tài chính (revenue/cost/CAC) đã được ẨN DANH HÓA thành % / index để bảo mật số liệu kinh doanh; ROAS là tỷ lệ (revenue/cost) nên giữ nguyên vì không lộ giá trị tuyệt đối.",
+  "by_channel_install": [
+    {
+      "Channel": "unattributed",
+      "clicks": 0.0,
+      "installs": 134135.0,
+      "install_rate": null,
+      "install_share_pct": 66.6582
+    },
+    {
+      "Channel": "google.adwords",
+      "clicks": 155453.0,
+      "installs": 29490.0,
+      "install_rate": 0.1897,
+      "install_share_pct": 14.655
+    },
+    {
+      "Channel": "apple.searchads",
+      "clicks": 20210.0,
+      "installs": 21426.0,
+      "install_rate": 1.0602,
+      "install_share_pct": 10.6476
+    },
+    {
+      "Channel": "tiktok",
+      "clicks": 64435.0,
+      "installs": 10512.0,
+      "install_rate": 0.1631,
+      "install_share_pct": 5.2239
+    },
+    {
+      "Channel": "facebook.business",
+      "clicks": 21114.0,
+      "installs": 5570.0,
+      "install_rate": 0.2638,
+      "install_share_pct": 2.768
+    },
+    {
+      "Channel": "tiktok.video",
+      "clicks": 2907.0,
+      "installs": 55.0,
+      "install_rate": 0.0189,
+      "install_share_pct": 0.0273
+    },
+    {
+      "Channel": "referral",
+      "clicks": 220.0,
+      "installs": 19.0,
+      "install_rate": 0.0864,
+      "install_share_pct": 0.0094
+    },
+    {
+      "Channel": "fanpage.facebook",
+      "clicks": 341.0,
+      "installs": 13.0,
+      "install_rate": 0.0381,
+      "install_share_pct": 0.0065
+    },
+    {
+      "Channel": "qr",
+      "clicks": 144.0,
+      "installs": 7.0,
+      "install_rate": 0.0486,
+      "install_share_pct": 0.0035
+    },
+    {
+      "Channel": "ooh",
+      "clicks": 17.0,
+      "installs": 1.0,
+      "install_rate": 0.0588,
+      "install_share_pct": 0.0005
+    },
+    {
+      "Channel": "b2b",
+      "clicks": 3.0,
+      "installs": 0.0,
+      "install_rate": 0.0,
+      "install_share_pct": 0.0
+    },
+    {
+      "Channel": "$$default$$",
+      "clicks": 27.0,
+      "installs": 0.0,
+      "install_rate": 0.0,
+      "install_share_pct": 0.0
+    }
+  ],
+  "by_os": [
+    {
+      "OS Name": "iOS",
+      "installs": 137274.0,
+      "share_pct": 68.22
+    },
+    {
+      "OS Name": "Android",
+      "installs": 63856.0,
+      "share_pct": 31.73
+    },
+    {
+      "OS Name": "iPadOS",
+      "installs": 98.0,
+      "share_pct": 0.05
+    },
+    {
+      "OS Name": "Chrome OS",
+      "installs": 0.0,
+      "share_pct": 0.0
+    },
+    {
+      "OS Name": "Linux",
+      "installs": 0.0,
+      "share_pct": 0.0
+    },
+    {
+      "OS Name": "Other",
+      "installs": 0.0,
+      "share_pct": 0.0
+    },
+    {
+      "OS Name": "Mac OS X",
+      "installs": 0.0,
+      "share_pct": 0.0
+    },
+    {
+      "OS Name": "Windows",
+      "installs": 0.0,
+      "share_pct": 0.0
+    },
+    {
+      "OS Name": "Ubuntu",
+      "installs": 0.0,
+      "share_pct": 0.0
+    }
+  ],
+  "by_channel_economics_anonymized": [
+    {
+      "Channel": "google.adwords",
+      "orders": 5699.0,
+      "order_users": 5643.0,
+      "roas": 4.17,
+      "cac_index": 106.42,
+      "cost_share_pct": 41.51,
+      "revenue_share_pct": 38.4
+    },
+    {
+      "Channel": "tiktok",
+      "orders": 3024.0,
+      "order_users": 2967.0,
+      "roas": 4.07,
+      "cac_index": 111.88,
+      "cost_share_pct": 22.95,
+      "revenue_share_pct": 20.7
+    },
+    {
+      "Channel": "apple.searchads",
+      "orders": 5670.0,
+      "order_users": 5597.0,
+      "roas": 8.42,
+      "cac_index": 53.51,
+      "cost_share_pct": 20.7,
+      "revenue_share_pct": 38.62
+    },
+    {
+      "Channel": "facebook.business",
+      "orders": 328.0,
+      "order_users": 259.0,
+      "roas": 0.69,
+      "cac_index": 828.67,
+      "cost_share_pct": 14.84,
+      "revenue_share_pct": 2.28
+    }
+  ],
+  "fraud": [
+    {
+      "Channel": "unattributed",
+      "Installs (App)": 134135.0,
+      "reinstall_rate_pct": 1.06
+    },
+    {
+      "Channel": "google.adwords",
+      "Installs (App)": 29490.0,
+      "reinstall_rate_pct": 0.66
+    },
+    {
+      "Channel": "apple.searchads",
+      "Installs (App)": 21426.0,
+      "reinstall_rate_pct": 1.19
+    },
+    {
+      "Channel": "tiktok",
+      "Installs (App)": 10512.0,
+      "reinstall_rate_pct": 0.77
+    },
+    {
+      "Channel": "facebook.business",
+      "Installs (App)": 5570.0,
+      "reinstall_rate_pct": 2.1
+    },
+    {
+      "Channel": "tiktok.video",
+      "Installs (App)": 55.0,
+      "reinstall_rate_pct": 1.82
+    },
+    {
+      "Channel": "referral",
+      "Installs (App)": 19.0,
+      "reinstall_rate_pct": 5.26
+    },
+    {
+      "Channel": "fanpage.facebook",
+      "Installs (App)": 13.0,
+      "reinstall_rate_pct": 0.0
+    },
+    {
+      "Channel": "qr",
+      "Installs (App)": 7.0,
+      "reinstall_rate_pct": 0.0
+    },
+    {
+      "Channel": "ooh",
+      "Installs (App)": 1.0,
+      "reinstall_rate_pct": 0.0
+    }
+  ],
+  "funnel": [
+    {
+      "step": "Install",
+      "events": 201237
+    },
+    {
+      "step": "Sign-up (mới trong kỳ)",
+      "events": 59276
+    },
+    {
+      "step": "Product View",
+      "events": 518573
+    },
+    {
+      "step": "Xem báo giá",
+      "events": 453324
+    },
+    {
+      "step": "Initiate Checkout",
+      "events": 144984
+    },
+    {
+      "step": "Order Complete",
+      "events": 105849
+    }
+  ],
+  "voucher": {
+    "voucher_viewed": 104098,
+    "voucher_applied": 12879,
+    "apply_rate_pct": 12.4
+  },
+  "ops": {
+    "no_driver_found": 24105,
+    "order_cancel": 28782,
+    "order_complete": 105849,
+    "cancel_rate_pct": 21.4
+  },
+  "blended_roas_all_channels": 33.458839695910996,
+  "paid_only_roas": 4.512954571252194,
+  "paid_installs_share_pct": 33.29457133202139
+}

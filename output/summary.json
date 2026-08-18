@@ -1,0 +1,272 @@
+{
+  "kpi": {
+    "total_spend_vnd": 1624592340,
+    "total_bookings": 23853,
+    "blended_cpa_vnd": 68109,
+    "total_installs": 61561,
+    "total_clicks": 364964,
+    "total_impressions": 16844181
+  },
+  "by_market": [
+    {
+      "market": "TP.HCM",
+      "impressions": 7486570,
+      "clicks": 161781,
+      "spend_vnd": 777547111,
+      "installs": 27456,
+      "bookings": 10498,
+      "ctr": 0.0216,
+      "cpc_vnd": 4806.1708,
+      "cpa_vnd": 74066.2137,
+      "install_to_booking": 0.3824
+    },
+    {
+      "market": "Hà Nội",
+      "impressions": 5838371,
+      "clicks": 126263,
+      "spend_vnd": 569349515,
+      "installs": 21094,
+      "bookings": 8441,
+      "ctr": 0.0216,
+      "cpc_vnd": 4509.2348,
+      "cpa_vnd": 67450.4816,
+      "install_to_booking": 0.4002
+    },
+    {
+      "market": "Đà Nẵng",
+      "impressions": 2097239,
+      "clicks": 45690,
+      "spend_vnd": 167701529,
+      "installs": 7663,
+      "bookings": 2985,
+      "ctr": 0.0218,
+      "cpc_vnd": 3670.4209,
+      "cpa_vnd": 56181.4168,
+      "install_to_booking": 0.3895
+    },
+    {
+      "market": "Cần Thơ",
+      "impressions": 1422001,
+      "clicks": 31230,
+      "spend_vnd": 109994185,
+      "installs": 5348,
+      "bookings": 1929,
+      "ctr": 0.022,
+      "cpc_vnd": 3522.068,
+      "cpa_vnd": 57021.3504,
+      "install_to_booking": 0.3607
+    }
+  ],
+  "by_channel": [
+    {
+      "channel": "Google Ads",
+      "impressions": 3309076,
+      "clicks": 135641,
+      "spend_vnd": 814717283,
+      "installs": 30992,
+      "bookings": 14451,
+      "ctr": 0.041,
+      "cpc_vnd": 6006.4234,
+      "cpa_platform_vnd": 56377.9173
+    },
+    {
+      "channel": "Facebook Ads",
+      "impressions": 6011828,
+      "clicks": 81458,
+      "spend_vnd": 332070748,
+      "installs": 11736,
+      "bookings": 3719,
+      "ctr": 0.0135,
+      "cpc_vnd": 4076.5885,
+      "cpa_platform_vnd": 89290.3329
+    },
+    {
+      "channel": "TikTok Ads",
+      "impressions": 5114411,
+      "clicks": 95187,
+      "spend_vnd": 328792052,
+      "installs": 10501,
+      "bookings": 2674,
+      "ctr": 0.0186,
+      "cpc_vnd": 3454.1697,
+      "cpa_platform_vnd": 122958.8826
+    },
+    {
+      "channel": "Zalo Ads",
+      "impressions": 2408866,
+      "clicks": 52678,
+      "spend_vnd": 149012257,
+      "installs": 8332,
+      "bookings": 3009,
+      "ctr": 0.0219,
+      "cpc_vnd": 2828.7379,
+      "cpa_platform_vnd": 49522.1858
+    }
+  ],
+  "market_channel_matrix": [
+    {
+      "market": "Cần Thơ",
+      "channel": "Facebook Ads",
+      "spend_vnd": 21885952,
+      "bookings": 296,
+      "cpa_vnd": 73939.03
+    },
+    {
+      "market": "Cần Thơ",
+      "channel": "Google Ads",
+      "spend_vnd": 56039235,
+      "bookings": 1191,
+      "cpa_vnd": 47052.25
+    },
+    {
+      "market": "Cần Thơ",
+      "channel": "TikTok Ads",
+      "spend_vnd": 22068017,
+      "bookings": 203,
+      "cpa_vnd": 108709.44
+    },
+    {
+      "market": "Cần Thơ",
+      "channel": "Zalo Ads",
+      "spend_vnd": 10000981,
+      "bookings": 239,
+      "cpa_vnd": 41845.11
+    },
+    {
+      "market": "Hà Nội",
+      "channel": "Facebook Ads",
+      "spend_vnd": 119068138,
+      "bookings": 1220,
+      "cpa_vnd": 97596.83
+    },
+    {
+      "market": "Hà Nội",
+      "channel": "Google Ads",
+      "spend_vnd": 281319449,
+      "bookings": 5137,
+      "cpa_vnd": 54763.37
+    },
+    {
+      "market": "Hà Nội",
+      "channel": "TikTok Ads",
+      "spend_vnd": 116141627,
+      "bookings": 970,
+      "cpa_vnd": 119733.64
+    },
+    {
+      "market": "Hà Nội",
+      "channel": "Zalo Ads",
+      "spend_vnd": 52820301,
+      "bookings": 1114,
+      "cpa_vnd": 47414.99
+    },
+    {
+      "market": "TP.HCM",
+      "channel": "Facebook Ads",
+      "spend_vnd": 157472331,
+      "bookings": 1743,
+      "cpa_vnd": 90345.57
+    },
+    {
+      "market": "TP.HCM",
+      "channel": "Google Ads",
+      "spend_vnd": 393738390,
+      "bookings": 6317,
+      "cpa_vnd": 62329.97
+    },
+    {
+      "market": "TP.HCM",
+      "channel": "TikTok Ads",
+      "spend_vnd": 155829155,
+      "bookings": 1139,
+      "cpa_vnd": 136812.25
+    },
+    {
+      "market": "TP.HCM",
+      "channel": "Zalo Ads",
+      "spend_vnd": 70507235,
+      "bookings": 1299,
+      "cpa_vnd": 54278.09
+    },
+    {
+      "market": "Đà Nẵng",
+      "channel": "Facebook Ads",
+      "spend_vnd": 33644327,
+      "bookings": 460,
+      "cpa_vnd": 73139.84
+    },
+    {
+      "market": "Đà Nẵng",
+      "channel": "Google Ads",
+      "spend_vnd": 83620209,
+      "bookings": 1806,
+      "cpa_vnd": 46301.33
+    },
+    {
+      "market": "Đà Nẵng",
+      "channel": "TikTok Ads",
+      "spend_vnd": 34753253,
+      "bookings": 362,
+      "cpa_vnd": 96003.46
+    },
+    {
+      "market": "Đà Nẵng",
+      "channel": "Zalo Ads",
+      "spend_vnd": 15683740,
+      "bookings": 357,
+      "cpa_vnd": 43932.04
+    }
+  ],
+  "attribution": [
+    {
+      "channel": "Google Ads",
+      "first_touch_bookings": 4941,
+      "last_touch_bookings": 11462,
+      "linear_bookings": 7998.58,
+      "spend_vnd": 814717283,
+      "first_touch_cpa_vnd": 164889.15,
+      "last_touch_cpa_vnd": 71079.85,
+      "linear_cpa_vnd": 101857.7,
+      "linear_vs_last_gap_pct": -30.22
+    },
+    {
+      "channel": "Facebook Ads",
+      "first_touch_bookings": 8323,
+      "last_touch_bookings": 4263,
+      "linear_bookings": 6247.83,
+      "spend_vnd": 332070748,
+      "first_touch_cpa_vnd": 39897.96,
+      "last_touch_cpa_vnd": 77896.02,
+      "linear_cpa_vnd": 53149.74,
+      "linear_vs_last_gap_pct": 46.56
+    },
+    {
+      "channel": "TikTok Ads",
+      "first_touch_bookings": 7319,
+      "last_touch_bookings": 2862,
+      "linear_bookings": 4979.33,
+      "spend_vnd": 328792052,
+      "first_touch_cpa_vnd": 44923.08,
+      "last_touch_cpa_vnd": 114881.92,
+      "linear_cpa_vnd": 66031.34,
+      "linear_vs_last_gap_pct": 73.98
+    },
+    {
+      "channel": "Zalo Ads",
+      "first_touch_bookings": 3270,
+      "last_touch_bookings": 5266,
+      "linear_bookings": 4627.25,
+      "spend_vnd": 149012257,
+      "first_touch_cpa_vnd": 45569.5,
+      "last_touch_cpa_vnd": 28297.05,
+      "linear_cpa_vnd": 32203.2,
+      "linear_vs_last_gap_pct": -12.13
+    }
+  ],
+  "funnel": {
+    "impressions": 16844181,
+    "clicks": 364964,
+    "installs": 61561,
+    "bookings": 23853
+  }
+}
