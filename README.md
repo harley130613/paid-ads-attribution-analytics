@@ -32,7 +32,7 @@ Mục tiêu là thực hành Multi-touch Attribution ở cấp độ điểm ch�
 
 Phân tích dữ liệu thực tế được trích xuất từ MMP Airbridge trong giai đoạn **01/06 - 17/08/2026**, bao gồm:
 
-- Hiệu quả Click → Install theo từng kênh.
+- Hiệu quả Click -> Install theo từng kênh.
 - ROAS và CAC của các kênh trả phí.
 - Chất lượng traffic và tỷ lệ Re-install.
 - Hoạt động của người dùng trong ứng dụng.
