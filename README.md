@@ -5,10 +5,10 @@ trả lời câu hỏi **"khách hàng thực sự đến từ đâu, và ngân 
 
 Repo gồm **2 phần**:
 
-- **Phần 1 — Attribution modeling (dữ liệu mô phỏng):** so sánh 3 mô hình attribution
+- **Phần 1 - Attribution modeling (dữ liệu mô phỏng):** so sánh 3 mô hình attribution
   (first-touch/last-touch/linear) trên dữ liệu paid ads + customer journey **tự mô phỏng**,
   luyện tập kỹ năng multi-touch attribution ở cấp touchpoint.
-- **Phần 2 — Paid channel performance (dữ liệu thật, đã ẩn danh hóa):** phân tích dữ liệu
+- **Phần 2 - Paid channel performance (dữ liệu thật, đã ẩn danh hóa):** phân tích dữ liệu
   **thật** từ MMP Airbridge của BUTL (01/06 – 17/08/2026), đo ROAS/CAC theo kênh và chất lượng
   traffic - các chỉ số tài chính tuyệt đối đã được **ẩn danh hóa thành % / index** trước khi
   đưa vào repo công khai để bảo mật số liệu kinh doanh của doanh nghiệp.
